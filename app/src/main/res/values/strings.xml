@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Menu Finder</string>
+    <string name="desc">Item Image</string>
+    <string name="descCover">Cover Image</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string-array name="category">
+        <item>Ala Carte</item>
+        <item>Set Meal</item>
+    </string-array>
+
+    <string-array name="restaurants">
+        <item>Marry Brown</item>
+        <item>McDonalds</item>
+        <item>KFC</item>
+        <item>Pizza Hut</item>
+        <item>Ming Garden</item>
+        <item>Sushi King</item>
+        <item>The Chicken Rice Shop</item>
+        <item>Kenny Rogers</item>
+        <item>Bread History</item>
+        <item>Tealive</item>
+        <item>Sakae Sushi</item>
+        <item>Starbucks</item>
+        <item>Seoul Garden</item>
+        <item>Food Hall</item>
+        <item>Red Box</item>
+    </string-array>
+</resources>
