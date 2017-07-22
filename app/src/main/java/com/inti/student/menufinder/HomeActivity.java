@@ -10,7 +10,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -35,6 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(HomeActivity.this, android.R.layout.simple_list_item_1, restaurants);
         restaurantList.setAdapter(adapter);
 
+        // Click Listener for ListView (List of restaurants, cafe and more)
         restaurantList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {

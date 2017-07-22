@@ -4,7 +4,6 @@ package com.inti.student.menufinder;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -12,10 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +24,6 @@ public class AlacarteFragment extends Fragment {
     private Cursor cursor;
     private ItemAdapter adapter;
     private List<Item> itemList;
-    FloatingActionButton fab;
 
     public AlacarteFragment() {
         // Required empty public constructor
@@ -47,9 +41,7 @@ public class AlacarteFragment extends Fragment {
         adapter = new ItemAdapter(getActivity(), itemList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
-        //RecyclerView.LayoutManager mLayoutManager = new StaggeredGridLayoutManager(2, 1);
         recyclerView.setLayoutManager(mLayoutManager);
-        //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
@@ -58,7 +50,7 @@ public class AlacarteFragment extends Fragment {
         return rootView;
     }
 
-    //Adding items to the menu
+    // Adding items to the menu for Ala Carte
     private void prepareItems() {
         int counter = 0;
 

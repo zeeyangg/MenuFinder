@@ -23,9 +23,11 @@ public class ItemDetails extends AppCompatActivity {
         TextView title = (TextView) findViewById(R.id.title);
         TextView price = (TextView) findViewById(R.id.price);
 
+        // Data are transferred using Bundle
         Bundle itemData = getIntent().getExtras();
         checkSelected.setText(itemData.getString("check"));
 
+        // Display the data provided from Bundle
         if (itemData.getString("check").equals("Selected")) {
             checkSelected.setBackgroundColor(Color.parseColor("#FF41BF1B"));
         } else {

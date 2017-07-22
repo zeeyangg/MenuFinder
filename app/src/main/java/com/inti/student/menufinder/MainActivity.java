@@ -2,10 +2,6 @@ package com.inti.student.menufinder;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.database.Cursor;
-import android.database.SQLException;
-import android.graphics.Rect;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,16 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -63,9 +53,11 @@ public class MainActivity extends AppCompatActivity {
 
         floating_confirm = (FloatingActionButton) findViewById(R.id.floating_confirm);
 
+        // Drop down menu
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                // Change fragment when user choose a category in the drop down menu
                 if (position != 0) {
                     SetFragment f2 = new SetFragment();
                     pushFragments("SET", f2);
@@ -115,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
         appBarLayout.setExpanded(true);
 
-        //hiding & showing the title when toolbar expanded & collapsed
+        // Hiding & showing the title when toolbar expanded & collapsed
         appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
             boolean isShow = false;
             int scrollRange = -1;
@@ -198,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
+                            checkedItem.clear();
                             MainActivity.this.finish();
                         }
                     })

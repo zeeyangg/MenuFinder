@@ -2,9 +2,6 @@ package com.inti.student.menufinder;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.drawable.Drawable;
-import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,9 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
-
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -25,7 +19,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
     private Context mContext;
     private List<Item> itemList;
-    public ArrayList<Item> checkedItem = new ArrayList<>();
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView title, price, quantityCount;
@@ -79,6 +72,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
         holder.price.setText(String.format("RM %.2f", item.getPrice()));
         holder.thumbnail.setImageResource(item.getThumbnail());
 
+        // Card clicked listener
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +125,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
 
                 if (item.getQuantity() == 0) {
                     holder.checkBox.setChecked(true);
-                    //checkedItem.add(item);
                     MainActivity.updateList(item);
                 }
                 item.setQuantity(item.getQuantity()+1);
@@ -151,7 +144,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.MyViewHolder> 
                     if (item.getQuantity() == 0) {
                         holder.price.setText(String.format("RM %.2f", item.getPrice()));
                         holder.checkBox.setChecked(false);
-                        //checkedItem.remove(item);
                         MainActivity.removeList(item);
                     } else {
                         holder.price.setText(String.format("RM %.2f", item.getQuantity() * item.getPrice()));

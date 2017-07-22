@@ -11,8 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,9 +42,7 @@ public class SetFragment extends Fragment {
         adapter = new ItemAdapter(getActivity(), itemList);
 
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(getActivity(), 2);
-        //RecyclerView.LayoutManager mLayoutManager = new StaggeredGridLayoutManager(2, 1);
         recyclerView.setLayoutManager(mLayoutManager);
-        //recyclerView.addItemDecoration(new GridSpacingItemDecoration(2, dpToPx(4), true));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
 
@@ -55,7 +51,7 @@ public class SetFragment extends Fragment {
         return rootView;
     }
 
-    //Adding items to the menu
+    // Adding items to the menu for Set Meal
     private void prepareItems() {
         int counter = 0;
 

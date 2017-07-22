@@ -15,11 +15,12 @@ public class Cart extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-
+        // Data are transferred using Bundle
         Bundle itemData = getIntent().getExtras();
         String itemSelected = itemData.getString("items");
         String amount = itemData.getString("prices");
 
+        // Display the data provided from Bundle
         final TextView cartText = (TextView) findViewById(R.id.cartText);
         final TextView amountText = (TextView) findViewById(R.id.amountText);
         cartText.setText(itemSelected);
